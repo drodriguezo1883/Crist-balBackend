@@ -24,11 +24,6 @@ public class Registro {
     private String nombre;
 
     @NotBlank
-    @Pattern(regexp = "^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ\\s\\-]+$", message = "El apellido solo puede contener letras")
-    @Column(nullable = false)
-    private String apellido;
-
-    @NotBlank
     @Pattern(regexp = "^[2678]\\d{7}$", message = "Ingrese un número de teléfono de Costa Rica válido")
     @Column(nullable = false)
     private String telefono;
