@@ -29,7 +29,7 @@ public class Registro {
     private String telefono;
 
     @NotBlank
-    @Pattern(regexp = "^\\d+$", message = "El código debe contener solo números")
+    @Pattern(regexp = "^\\d{12}$", message = "El código debe tener exactamente 12 dígitos")
     @Column(nullable = false)
     private String codigo;
 
