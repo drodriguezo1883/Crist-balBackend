@@ -1,0 +1,17 @@
+# Maven
+target/
+
+# Application secrets - never commit real credentials
+src/main/resources/application.properties
+
+# Keep the template so others know what properties are needed
+!src/main/resources/application.properties.template
+
+# IntelliJ
+.idea/
+*.iml
+*.iws
+
+# OS
+.DS_Store
+Thumbs.db
