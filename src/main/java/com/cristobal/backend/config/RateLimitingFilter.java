@@ -1,4 +1,4 @@
-package com.example.empleados.config;
+package com.cristobal.backend.config;
 
 import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
@@ -11,8 +11,6 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
 
 @Component
 public class RateLimitingFilter implements Filter {
@@ -34,8 +32,8 @@ public class RateLimitingFilter implements Filter {
         if (endpoint.contains("/api/registros") && httpRequest.getMethod().equals("POST")) {
             if (!isAllowed(clientIp)) {
                 httpResponse.setStatus(429);
-                httpResponse.setContentType("application/json");
-                httpResponse.getWriter().write("{\"error\":\"Too many requests. Maximum " + REQUESTS_PER_MINUTE + " requests per minute.\"}");
+                httpResponse.setContentType("application/json;charset=UTF-8");
+                httpResponse.getWriter().write("{\"error\":\"Demasiados intentos. Espere un minuto e intente de nuevo.\"}");
                 return;
             }
         }
