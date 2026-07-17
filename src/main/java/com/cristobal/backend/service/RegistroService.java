@@ -16,9 +16,9 @@ public class RegistroService {
     }
 
     public Registro guardar(Registro registro) {
-        if (repository.existsByTelefonoAndCodigo(registro.getTelefono(), registro.getCodigo())) {
+        if (repository.existsByCodigo(registro.getCodigo())) {
             throw new ResponseStatusException(HttpStatus.CONFLICT,
-                    "Este código ya fue registrado con ese número de teléfono");
+                    "Este código ya fue registrado");
         }
         return repository.save(registro);
     }

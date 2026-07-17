@@ -32,7 +32,7 @@ public class Registro {
 
     @NotBlank
     @Pattern(regexp = "^\\d{12}$", message = "El código debe tener exactamente 12 dígitos")
-    @Column(nullable = false, length = 12)
+    @Column(nullable = false, length = 12, unique = true)
     private String codigo;
 
     @Column(nullable = false, updatable = false)
